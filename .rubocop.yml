@@ -2,5 +2,12 @@ AllCops:
   Exclude:
     - 'bin/*'
 
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/*'
+
+Style/Documentation:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false
