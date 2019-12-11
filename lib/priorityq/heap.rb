@@ -1,5 +1,19 @@
 module Priorityq
   class Heap
+    class MinHeap < Heap
+      def in_order?(first_index, second_index)
+        heap[first_index] <= heap[second_index]
+      end
+    end
+
+    def self.max
+      new
+    end
+
+    def self.min
+      MinHeap.new
+    end
+
     def initialize
       @heap = [0]
     end
