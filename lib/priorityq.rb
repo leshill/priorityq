@@ -1,4 +1,4 @@
-require "priorityq/version"
+require 'priorityq/version'
 
 module Priorityq
   class Error < StandardError; end
