@@ -1,8 +1,9 @@
-# Priorityq
+# Priority queue and binary heap for Comparables
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/priorityq`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+* Max queue: `Priorityq::PriorityQueue.max`
+* Min queue: `Priorityq::PriorityQueue.min`
+* Max heap: `Priorityq::Heap.max`
+* Min heap: `Priorityq::Heap.min`
 
 ## Installation
 
@@ -19,10 +20,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install priorityq
-
-## Usage
-
-TODO: Write usage instructions here
 
 ## Development
 
