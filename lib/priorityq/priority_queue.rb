@@ -15,8 +15,16 @@ module Priorityq
       end
     end
 
-    def initialize
-      @heap = Priorityq::Heap.max
+    def self.max
+      new
+    end
+
+    def self.min
+      new Priorityq::Heap.min
+    end
+
+    def initialize(heap = Priorityq::Heap.max)
+      @heap = heap
     end
 
     def empty?

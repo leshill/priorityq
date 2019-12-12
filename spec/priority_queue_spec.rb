@@ -14,6 +14,24 @@ RSpec.describe Priorityq::PriorityQueue do
     it { is_expected.to be_kind_of Comparable }
   end
 
+  describe '.max' do
+    let(:pq) { Priorityq::PriorityQueue.max }
+
+    it 'creates a max priority queue' do
+      fill_queue pq, items
+      expect(pq.pop).to eq 'first'
+    end
+  end
+
+  describe '.min' do
+    let(:pq) { Priorityq::PriorityQueue.min }
+
+    it 'creates a min priority queue' do
+      fill_queue pq, items
+      expect(pq.pop).to eq 'third'
+    end
+  end
+
   describe '#empty?' do
     subject { pq.empty? }
 
