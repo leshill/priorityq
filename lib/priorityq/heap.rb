@@ -18,8 +18,12 @@ module Priorityq
       @heap = [0]
     end
 
+    def empty?
+      heap.size == 1
+    end
+
     def pop
-      return nil if heap.size == 1
+      return nil if empty?
 
       exchange 1, top
       value = heap.pop

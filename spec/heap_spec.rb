@@ -47,6 +47,10 @@ RSpec.describe Priorityq::Heap do
     expect(heap).to respond_to :pop
   end
 
+  it 'exposes an empty? operation' do
+    expect(heap).to respond_to :empty?
+  end
+
   shared_examples_for 'a max heap' do
     context 'empty heap' do
       it 'returns nil if the heap is empty' do
@@ -210,6 +214,20 @@ RSpec.describe Priorityq::Heap do
       fill_heap(heap, (1..100).map { rand(1000..10_000).to_s })
 
       check_min_order heap, '0000', 100
+    end
+  end
+
+  describe '#empty?' do
+    subject { heap.empty? }
+
+    context 'when the heap is empty' do
+      it { is_expected.to be_truthy }
+    end
+
+    context 'when the heap has values' do
+      before { heap.push 42 }
+
+      it { is_expected.to be_falsey }
     end
   end
 end
