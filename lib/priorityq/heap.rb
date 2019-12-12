@@ -22,6 +22,12 @@ module Priorityq
       heap.size == 1
     end
 
+    def peek
+      return nil if empty?
+
+      heap[1]
+    end
+
     def pop
       return nil if empty?
 

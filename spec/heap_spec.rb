@@ -230,4 +230,26 @@ RSpec.describe Priorityq::Heap do
       it { is_expected.to be_falsey }
     end
   end
+
+  describe '#peek' do
+    subject { heap.peek }
+
+    context 'when the heap is empty' do
+      it { is_expected.to be_nil }
+    end
+
+    context 'when the heap has values' do
+      before { fill_heap heap, [1, 2, 42] }
+
+      context 'and is a max heap, with a max of 42' do
+        it { is_expected.to eq 42 }
+      end
+
+      context 'and is a min heap, with a min of 1' do
+        let(:heap) { described_class.min }
+
+        it { is_expected.to eq 1 }
+      end
+    end
+  end
 end
